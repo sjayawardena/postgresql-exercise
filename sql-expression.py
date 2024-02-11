@@ -38,7 +38,7 @@ track_table = Table(
 
 # making the connection
 with db.connect() as connection:
-    #Query 1 - select all records from the "Artist" table
+    #Query 1 - select all records from the "artist" table
     #select_query = artist_table.select()
     #results = connection.execute(select_query)
     #for result in results:
