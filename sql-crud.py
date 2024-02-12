@@ -95,10 +95,25 @@ simon_jayawardena = Programmer (
 # session.add(margaret_hamilton)
 # session.add(bill_gates)
 # session.add(tim_berners_lee)
-session. add(simon_jayawardena)
+# session. add(simon_jayawardena)
 
 #commit our session to the database
-session.commit()
+# session.commit()
+
+# updating a single record
+# programmer = session.query(Programmer).filter_by(id=7).first()
+# programmer.famous_for = "World President"
+
+# updating multiple records
+people = session.query(Programmer)
+for person in people:
+    if person.gender == "F":
+        person.gender = "Female"
+    elif person.gender == "M":
+        person.gender = "Male"
+    else:
+        print("Gender not defined")
+    session.commit()
 
 # query the database to find all Programmers
 programmers = session.query(Programmer)
